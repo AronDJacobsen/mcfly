@@ -2,15 +2,15 @@
 import 'dart:async';
 import 'dart:collection';
 import 'dart:io';
-import 'dart:typed_data';
+//import 'dart:typed_data';
 import 'dart:ui';
 //import 'dart:typed_data';
 
 // Flutter packages
 import 'package:another_xlider/another_xlider.dart';
 import 'package:another_xlider/models/handler.dart';
-import 'package:another_xlider/models/hatch_mark.dart';
-import 'package:another_xlider/models/hatch_mark_label.dart';
+//import 'package:another_xlider/models/hatch_mark.dart';
+//import 'package:another_xlider/models/hatch_mark_label.dart';
 import 'package:another_xlider/models/ignore_steps.dart';
 import 'package:another_xlider/models/tooltip/tooltip.dart';
 import 'package:another_xlider/models/tooltip/tooltip_box.dart';
@@ -19,8 +19,8 @@ import 'package:another_xlider/models/trackbar.dart';
 import 'package:camerawesome/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter_image_compress/flutter_image_compress.dart';
-import 'package:image/image.dart' as imglib;
-import 'package:path_provider/path_provider.dart';
+//import 'package:image/image.dart' as imglib;
+//import 'package:path_provider/path_provider.dart';
 
 // Directory packages
 import 'utilities.dart';
@@ -34,7 +34,6 @@ https://blog.codemagic.io/live-object-detection-on-image-stream-in-flutter/
 const myBlack = Color(0xff3c3c3c);
 const myRed = Color(0xfff84c54);
 const myOpacity = 0.4;
-
 
 void main() {
   runApp(const CameraAwesomeApp());
@@ -69,7 +68,9 @@ class _CameraPageState extends State<CameraPage> {
     child: SizedBox(
       width: 120,
       height: 120,
-      child: CircularProgressIndicator(color: myBlack,),
+      child: CircularProgressIndicator(
+        color: myBlack,
+      ),
     ),
   );
   ////// Video related: //////
@@ -108,7 +109,6 @@ class _CameraPageState extends State<CameraPage> {
   // The delay seconds
   double nDelaySeconds = 0;
   double _lowerValue = 0;
-
 
   @override
   void initState() {
@@ -169,8 +169,7 @@ class _CameraPageState extends State<CameraPage> {
           filter: ImageFilter.blur(
               sigmaX: 10, sigmaY: 10), // Adjust the blur intensity as needed
           child: Container(
-            color:
-                myBlack.withOpacity(0.1), // Adjust the opacity as needed
+            color: myBlack.withOpacity(0.1), // Adjust the opacity as needed
           ),
         ),
         // Add visible text on top of the blur
@@ -182,7 +181,7 @@ class _CameraPageState extends State<CameraPage> {
                 "$waitingSeconds sec.",
                 style: const TextStyle(
                   fontSize: 24,
-                  color: myBlack,//myBlack,//.withOpacity(myOpacity),
+                  color: myBlack, //myBlack,//.withOpacity(myOpacity),
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -311,7 +310,8 @@ class _CameraPageState extends State<CameraPage> {
           height: 35,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
-              color: myBlack.withOpacity(myOpacity)), // Adjust the height as needed
+              color: myBlack
+                  .withOpacity(myOpacity)), // Adjust the height as needed
           child: Center(
             child: Text(
               '${nDelaySeconds.toInt()} sec.',
@@ -340,7 +340,7 @@ class _CameraPageState extends State<CameraPage> {
       precacheSecond(nDelaySecondIdentifier);
       // Start the delay
       startOneSecondDelay(nDelaySecondIdentifier, 0);
-    // check 
+      // check
     } else {
       // waiting view
       waiting = true;
@@ -398,7 +398,8 @@ class _CameraPageState extends State<CameraPage> {
                 positionOffset: FlutterSliderTooltipPositionOffset(top: 0),
                 boxStyle: FlutterSliderTooltipBox(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16), color: myBlack.withOpacity(0.3)),
+                      borderRadius: BorderRadius.circular(16),
+                      color: myBlack.withOpacity(0.3)),
                 ),
               ),
               trackBar: FlutterSliderTrackBar(

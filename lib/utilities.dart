@@ -5,7 +5,7 @@ import 'package:another_xlider/another_xlider.dart';
 import 'package:another_xlider/models/handler.dart';
 import 'package:another_xlider/models/tooltip/tooltip.dart';
 import 'package:another_xlider/models/trackbar.dart';
-import 'package:camerawesome/camerawesome_plugin.dart';
+//import 'package:camerawesome/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image/image.dart' as imglib;
@@ -105,7 +105,6 @@ Future<(int, String)> createProcessedImagePath() async {
 
 const myBlack = Color(0xff3c3c3c);
 const myOpacity = 0.5;
-
 
 FlutterSlider indicateLoadedSeconds(double loadedSeconds, double totalSeconds) {
   return FlutterSlider(
